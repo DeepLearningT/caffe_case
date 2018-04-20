@@ -1,0 +1,41 @@
+# 全连接层对之前提取的特征再总结一成一个向量的形式
+# 全连接层，输出的是一个简单的向量，参数跟卷积一样
+layer {
+    name: "ip1"
+    type: "InnerProduct"
+    bottom: "pool2"
+    top: "ip1"
+    param {
+        lr_mult: 1  # lr_mult: 学习率的系数，最终学习率乘以solver.prototxt配置文件中base_lr
+        # 如果有连个lr_mult, 则第一个表示权值的学习率，第二个表示偏置项的学习率
+        # 一般偏置项的学习率是权值学习率的两倍
+        # 可以通过设置lr_mult为0，来控制对该层的参数不做更新
+    }
+    param {
+        lr_mult: 2
+    }
+
+    inner_product_param {
+        num_output: 500
+        weight_filter {
+            type: "xavler"
+        }
+        bias_filter {
+            type: "constant"
+        }
+    }
+
+}
+
+
+#测试的时候输入准确率
+layer {
+    name: "accuracy"
+    type: "Accuracy"
+    bottom: "ip2"
+    bottom: "label"
+    top: "accuracy"
+    include {
+        phase: TEST
+    }
+}
