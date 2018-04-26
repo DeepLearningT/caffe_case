@@ -8,8 +8,7 @@
 
 
 
-
-sudo python /home/tyd/caffe/python/draw_net.py /home/tyd/caffe/examples/mnist/lenet_train_test.prototxt /home/tyd/caffe_case/lenet.png --rankdir=BT
+python /Users/tonye/Documents/caffe/source/caffe-master/python/draw_net.py /Users/tonye/Documents/caffe/source/caffe-master/examples/mnist/lenet_train_test.prototxt /Users/tonye/PycharmProjects/PycharmProjects-caffe/caffe_case/sample/lenet.png --rankdir=LR
 
 第一个参数：网络模型的prototxt文件
 

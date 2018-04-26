@@ -1,1 +1,1 @@
-sudo /home/tyd/caffe/build/tools/compute_image_mean /home/tyd/caffe/examples/mnist/mnist_train_lmdb /home/tyd/caffe_case/mean.binaryproto
+/Users/tonye/Documents/caffe/source/caffe-master/build/tools/compute_image_mean /Users/tonye/Documents/caffe/source/caffe-master/examples/mnist/mnist_train_lmdb /Users/tonye/PycharmProjects/PycharmProjects-caffe/caffe_case/sample/mean.binaryproto
